@@ -8,13 +8,12 @@ Carrd integration
 
 Project can be integrated with https://carrd.co/ CMS.
 You shoud to add three embeded block: 
-    1. card/carrd-donate-panel.html
-    2. card/carrd-donate-messages.html
-    3. card/carrd-donate-invoke.html
+1. card/carrd-donate-panel.html
+2. card/carrd-donate-messages.html
+3. card/carrd-donate-invoke.html
 
 
 Also You shoud to modify carrd-donate-invoke.html for your settings:
-
     <link media="all" rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrd-donate-1.css" />
     <script type="application/javascript"
@@ -28,10 +27,10 @@ Also You shoud to modify carrd-donate-invoke.html for your settings:
             helperUrl: "https://helper.testnet.near.org",
             explorerUrl: "https://explorer.testnet.near.org",
         }, {
-            con_name: "carrd-donate.testnet",
+            con_name: "your-contract-name.testnet",
             app_name: "Example App",
-            success_url: "https://near-donate.carrd.co/#success",
-            failure_url: "https://near-donate.carrd.co/#failure",
+            success_url: "https://your-site.com.carrd.co/#success",
+            failure_url: "https://your-site.com.carrd.co/#failure",
         }, {
             "btn_signin": "near_protocol_signin",
             "btn_signout": "near_protocol_signout",
@@ -46,8 +45,6 @@ Also You shoud to modify carrd-donate-invoke.html for your settings:
             "html_last_messages": "near_protocol_html_last_messages",
         })
     </script>    
-
-
 
 
 Near Quick Start
