@@ -99,6 +99,8 @@ As you can see in `package.json`, this does two things:
 
 Carrd integration
 ==========
+https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrdco2.js
+
 
 
   [NEAR]: https://near.org/

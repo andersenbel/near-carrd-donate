@@ -8,7 +8,7 @@ import { Donates, messages } from './model';
 const DONATE_LIST_LIMIT = 10;
 
 // The maximum number of latest messages the contract returns.
-const TOP_DONATE_LIST_LIMIT = 5;
+const TOP_DONATE_LIST_LIMIT = 3;
 
 /**
  * Adds a new message under the name of the sender's account id.\
@@ -47,7 +47,6 @@ export function getNumberPhilanthropists(): String {
 }
 
 export function getTopPhilanthropists(): Donates[] {
-  let min_amount = 0
   const numMessages = messages.length
   let result = new Array<Donates>();
   let result2 = new Array<Donates>(numMessages);
@@ -55,7 +54,7 @@ export function getTopPhilanthropists(): Donates[] {
     if (messages[i].amount) {
       //if (messages[i].amount > u128.from(minAmount)) {
       let ind = 0
-      while (ind < messages.length && messages[i].amount < messages[ind].amount) {
+      while (ind < messages.length && messages[i].amount > messages[ind].amount) {
         ind++;
       }
       result2 = result.splice(0, ind).concat([messages[i]]).concat(result.splice(ind))
@@ -67,5 +66,5 @@ export function getTopPhilanthropists(): Donates[] {
       }
     }
   }
-  return result
+  return result.reverse()
 }
