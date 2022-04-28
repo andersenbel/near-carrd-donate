@@ -14,6 +14,7 @@ You shoud to add three embeded block:
 
 
 Also You shoud to modify carrd-donate-invoke.html for your settings:
+
     <link media="all" rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrd-donate-1.css" />
     <script type="application/javascript"
