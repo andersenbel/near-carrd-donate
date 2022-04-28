@@ -1,4 +1,5 @@
 class add_near {
+    //add_near
     constructor(near_config, wallet_config, ids_cfg) {
         this.near_config = near_config
         this.wallet_config = wallet_config
