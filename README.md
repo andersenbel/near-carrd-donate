@@ -1,7 +1,7 @@
 Near Carrd Donate Module
+==========
 
 Fork from https://github.com/near-examples/guest-book repsitory
-==========
 
 Sign in with [NEAR] and add a message to the guest book! A starter app built with an [AssemblyScript] backend and a [React] frontend.
 
