@@ -97,6 +97,9 @@ As you can see in `package.json`, this does two things:
 2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
 
 
+Carrd integration
+==========
+
 
   [NEAR]: https://near.org/
   [yarn]: https://yarnpkg.com/
@@ -110,4 +113,4 @@ As you can see in `package.json`, this does two things:
   [near-cli]: https://github.com/near/near-cli
   [CLI]: https://www.w3schools.com/whatis/whatis_cli.asp
   [create-near-app]: https://github.com/near/create-near-app
-  [gh-pages]: https://github.com/tschaub/gh-pages
+  [carrd.co]: https://carrd.co/
