@@ -8,7 +8,7 @@ import { Donates, messages } from './model';
 const DONATE_LIST_LIMIT = 10;
 
 // The maximum number of latest messages the contract returns.
-const TOP_DONATE_LIST_LIMIT = 3;
+const TOP_DONATE_LIST_LIMIT = 5;
 
 /**
  * Adds a new message under the name of the sender's account id.\
@@ -33,7 +33,7 @@ export function getDonates(): Donates[] {
   for (let i = 0; i < numMessages; i++) {
     result[i] = messages[i + startIndex];
   }
-  return result;
+  return result
 }
 
 export function getDonateBalance(): String {
@@ -49,22 +49,27 @@ export function getNumberPhilanthropists(): String {
 export function getTopPhilanthropists(): Donates[] {
   const numMessages = messages.length
   let result = new Array<Donates>();
-  let result2 = new Array<Donates>(numMessages);
+  let result2 = new Array<Donates>();
   for (let i = 0; i < numMessages; i++) {
     if (messages[i].amount) {
       //if (messages[i].amount > u128.from(minAmount)) {
       let ind = 0
-      while (ind < messages.length && messages[i].amount > messages[ind].amount) {
+      while (ind < result.length && messages[i].amount < result[ind].amount) {
         ind++;
       }
-      result2 = result.splice(0, ind).concat([messages[i]]).concat(result.splice(ind))
-      result = result2
-      if (messages.length > TOP_DONATE_LIST_LIMIT) {
-        result = result2.splice(0, TOP_DONATE_LIST_LIMIT)
-      } else {
-        result = result2
-      }
+      if (ind == 0)
+        result2 = [messages[i]].concat(result.splice(0, ind + 1))
+      if (ind > 0)
+        result2 = result.concat(result.splice(0, ind + 1)).
+          concat([messages[i]])//.concat(result.splice(ind))
+      result = result2.concat(result)
+      // result2.push(messages[i])
+      // result2 = result.splice(0, ind).concat([messages[i]])
+      // result2.concat([messages[i]])
+      // result2.
+      // result2 = result.splice(0, ind).concat([messages[i]]).concat(result.splice(ind))
+      // result = result2
     }
   }
-  return result.reverse()
+  return result.splice(0, TOP_DONATE_LIST_LIMIT)
 }
