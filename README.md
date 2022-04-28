@@ -1,14 +1,19 @@
 Near Carrd Donate Module
 ==========
 
-Fork from https://github.com/near-examples/guest-book repsitory
-
-Sign in with [NEAR] and add a message to the guest book! A starter app built with an [AssemblyScript] backend and a [React] frontend.
+Charity fundraising project with a rating of philanthropists.
 
 Carrd integration
 ==========
 
-    npm install --global near-cli
+Project can be integrated with https://carrd.co/ CMS.
+You shoud to add three embeded block: 
+    1. card/carrd-donate-panel.html
+    2. card/carrd-donate-messages.html
+    3. card/carrd-donate-invoke.html
+
+
+Also You shoud to modify carrd-donate-invoke.html for your settings:
 
     <link media="all" rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrd-donate-1.css" />
@@ -47,6 +52,7 @@ Carrd integration
 
 Near Quick Start
 ===========
+Based on near guest-book repsitory
 
 To run this project locally:
 
