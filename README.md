@@ -5,8 +5,47 @@ Fork from https://github.com/near-examples/guest-book repsitory
 
 Sign in with [NEAR] and add a message to the guest book! A starter app built with an [AssemblyScript] backend and a [React] frontend.
 
+Carrd integration
+==========
 
-Quick Start
+    npm install --global near-cli
+
+    <link media="all" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrd-donate-1.css" />
+    <script type="application/javascript"
+        src="https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrd-donate-1.js"></script>
+    <script>
+        new add_near({
+            networkId: "testnet",
+            keyStore: false,
+            nodeUrl: "https://rpc.testnet.near.org",
+            walletUrl: "https://wallet.testnet.near.org",
+            helperUrl: "https://helper.testnet.near.org",
+            explorerUrl: "https://explorer.testnet.near.org",
+        }, {
+            con_name: "carrd-donate.testnet",
+            app_name: "Example App",
+            success_url: "https://near-donate.carrd.co/#success",
+            failure_url: "https://near-donate.carrd.co/#failure",
+        }, {
+            "btn_signin": "near_protocol_signin",
+            "btn_signout": "near_protocol_signout",
+            "btn_donate": "buttons02",
+            "input_amount": "form01-name",
+            "input_sender_name": "near_protocol_input_your_name",
+            "input_message_text": "near_protocol_input_message_text",
+            "text_username": "near_protocol_username",
+            "text_number_messages": "text10",
+            "text_balance": "text06",
+            "html_top_messages": "near_protocol_html_top_messages",
+            "html_last_messages": "near_protocol_html_last_messages",
+        })
+    </script>    
+
+
+
+
+Near Quick Start
 ===========
 
 To run this project locally:
@@ -96,10 +135,6 @@ As you can see in `package.json`, this does two things:
 1. builds & deploys smart contracts to NEAR TestNet
 2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
 
-
-Carrd integration
-==========
-https://cdn.jsdelivr.net/gh/andersenbel/near-carrd-donate/carrd/carrdco2.js
 
 
 
