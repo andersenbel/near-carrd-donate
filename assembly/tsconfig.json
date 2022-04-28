@@ -2,5 +2,12 @@
   "extends": "../node_modules/assemblyscript/std/assembly.json",
   "include": [
     "./**/*.ts"
-  ]
+  ],
+  // "compilerOptions": {
+  //   "module": "ES6",
+  //   "noImplicitAny": true,
+  //   "removeComments": true,
+  //   "preserveConstEnums": true,
+  //   "sourceMap": true
+  // },
 }
