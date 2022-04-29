@@ -11,10 +11,22 @@ To prepare contract to using, you shoud clone `https://github.com/andersenbel/ne
 
     git clone git@github.com:andersenbel/near-carrd-donate    
 
-And modify settings in  `src/config.js`, first off all:
+And modify settings in  `src/config.js`:
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
 
+Next, you should to prepared envoriment accoording `Near Quick Start` part below and deploy contract:
+
+    yarn deploy:contract
+    near deploy --accountId carrd-donate.testnet --wasmFile ./out/main.wasm
+
+If you all made right, you can run the command:
+
+    near view your-contract.testnet getTopPhilanthropists
+
+And get it:
+    View call: your-contract.testnet.getTopPhilanthropists()
+    []
 
 Carrd integration
 ==========
