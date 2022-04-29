@@ -4,10 +4,10 @@ Near Carrd Donate Module
 Charity fundraising project with a rating of philanthropists.
 How it works see on the video https://www.youtube.com/watch?v=tMpGK9lEoAI
 
-Clone and deply Near contract
+Prepare Near contract
 ==========
 
-To prepare contract to using, you shoud clone `https://github.com/andersenbel/near-carrd-donate` repository:
+To prepare Near contract, you shoud clone `https://github.com/andersenbel/near-carrd-donate` repository:
 
     git clone git@github.com:andersenbel/near-carrd-donate    
 
@@ -15,12 +15,12 @@ And modify settings in  `src/config.js`:
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
 
-Next, you should to prepared envoriment accoording `Near Quick Start` part below and deploy contract:
+Next, you should to prepare envoriment accoording `Near Quick Start` part below, and deploy contract:
 
     yarn deploy:contract
     near deploy --accountId carrd-donate.testnet --wasmFile ./out/main.wasm
 
-If you all made right, you can run the command:
+If all right, you can run the command:
 
     near view your-contract.testnet getTopPhilanthropists
 
@@ -34,9 +34,9 @@ Carrd integration
 
 Project can be integrated with https://carrd.co/ CMS.
 You shoud to add three embeded block: 
-1. Near panel and input gorm for authorisied users [card/carrd-donate-panel.html]
-2. Output donates lists area [card/carrd-donate-messages.html]
-3. Javascript code for start [card/carrd-donate-invoke.html]
+1. Near panel and input gorm for authorisied users `card/carrd-donate-panel.html`
+2. Output donates lists area `card/carrd-donate-messages.html`
+3. Javascript code for start `card/carrd-donate-invoke.html`
 
 
 Also You shoud to modify carrd-donate-invoke.html for your settings:
