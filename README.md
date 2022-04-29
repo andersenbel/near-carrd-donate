@@ -7,24 +7,13 @@ How it works see on the video https://www.youtube.com/watch?v=tMpGK9lEoAI
 Clone and deply Near contract
 ==========
 
-To prepare contract to using, you shoud:
-1. Clone `https://github.com/andersenbel/near-carrd-donate` repository
+To prepare contract to using, you shoud clone `https://github.com/andersenbel/near-carrd-donate` repository:
 
     git clone git@github.com:andersenbel/near-carrd-donate    
 
-2. Modify `src/config.js`, first off all:
-
-UUdhhdhh
+And modify settings in  `src/config.js`, first off all:
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
-
-
-
-    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
-    
-
-    near --version
-
 
 
 Carrd integration
