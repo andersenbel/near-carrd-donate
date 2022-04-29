@@ -4,14 +4,30 @@ Near Carrd Donate Module
 Charity fundraising project with a rating of philanthropists.
 How it works see on the video https://www.youtube.com/watch?v=tMpGK9lEoAI
 
+Clone and deply Near contract
+==========
+
+To prepare contract to using, you shoud: clone https://github.com/andersenbel/near-carrd-donate repository: 
+1. Clone https://github.com/andersenbel/near-carrd-donate repositor
+
+    git clone git@github.com:andersenbel/near-carrd-donate
+
+2. Modify [src/config.js], first off all:
+
+    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
+
+
+3. card/carrd-donate-invoke.html
+
+
 Carrd integration
 ==========
 
 Project can be integrated with https://carrd.co/ CMS.
 You shoud to add three embeded block: 
-1. card/carrd-donate-panel.html
-2. card/carrd-donate-messages.html
-3. card/carrd-donate-invoke.html
+1. Near panel and input gorm for authorisied users [card/carrd-donate-panel.html]
+2. Output donates lists area [card/carrd-donate-messages.html]
+3. Javascript code for start [card/carrd-donate-invoke.html]
 
 
 Also You shoud to modify carrd-donate-invoke.html for your settings:

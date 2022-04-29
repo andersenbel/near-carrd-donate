@@ -74,8 +74,9 @@ class add_near {
         document.getElementById(this.ids_cfg.btn_donate).addEventListener("click", function () {
             const m = document.getElementById($t.ids_cfg.input_message_text).value
             const g = parseFloat(document.getElementById($t.ids_cfg.input_amount).value)
-            if (m != '')
+            if (m != '' && m.length < 50 && g > 0)
                 $t.addDonate(m, g)
+            //else alert("Amount and")
         })
     }
 
