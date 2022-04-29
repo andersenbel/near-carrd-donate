@@ -14,9 +14,16 @@ To prepare contract to using, you shoud:
 
 2. Modify `src/config.js`, first off all:
 
+
+    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
+
+
+
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
     
-    yarn deploy
+
+    near --version
+
 
 
 Carrd integration
