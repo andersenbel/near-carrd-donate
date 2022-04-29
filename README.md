@@ -3,12 +3,12 @@ Near Carrd Donate Module
 
 Carrd Donate Module is a charity fundraising project with a rating of philanthropists. It has some features. Login with Near protocol. Opportunity to donate a certain amount Near.  Users can also see the latest donation transactions and the top 5 philanthropists.
 
-How it works see on the video: https://www.youtube.com/watch?v=tMpGK9lEoAI (it is a draft yet)
+How it works see on the [video](https://www.youtube.com/watch?v=tMpGK9lEoAI) (it is a draft yet)
 
 Prepare Near contract
 ==========
 
-To prepare Near contract, you shoud clone https://github.com/andersenbel/near-carrd-donate repository:
+To prepare Near contract, you shoud clone [repository](https://github.com/andersenbel/near-carrd-donate)
 
     git clone git@github.com:andersenbel/near-carrd-donate    
 
