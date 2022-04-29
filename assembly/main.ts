@@ -27,11 +27,13 @@ export function addDonate(text: string, name: string): void {
  * NOTE: This is a view method. Which means it should NOT modify the state.
  */
 export function getDonates(): Donates[] {
-  const numMessages = min(DONATE_LIST_LIMIT, messages.length);
-  const startIndex = messages.length - numMessages;
-  const result = new Array<Donates>(numMessages);
+  const numMessages = messages.length
+  let result = new Array<Donates>();
   for (let i = 0; i < numMessages; i++) {
-    result[i] = messages[i + startIndex];
+    if (messages[i].amount > u128.from(0))
+      result.push(messages[i]);
+    if (result.length == DONATE_LIST_LIMIT)
+      break
   }
   return result
 }
@@ -46,30 +48,33 @@ export function getNumberPhilanthropists(): String {
   return result;
 }
 
-export function getTopPhilanthropists(): Donates[] {
+export function getTopPhilanthropists(): Array<Donates> {
   const numMessages = messages.length
-  let result = new Array<Donates>();
-  let result2 = new Array<Donates>();
+  let result: Array<Donates> = [];
+  let tmp: Array<Donates> = [];
+  let flag = false
+  let ind = 0
   for (let i = 0; i < numMessages; i++) {
-    if (messages[i].amount) {
-      //if (messages[i].amount > u128.from(minAmount)) {
-      let ind = 0
-      while (ind < result.length && messages[i].amount < result[ind].amount) {
-        ind++;
+    if (messages[i].amount && messages[i].amount > u128.from(0)) {
+      tmp = []
+      if (result.length == 0)
+        tmp.push(messages[i])
+      else {
+        flag = false
+        ind = 0
+        while (ind < result.length) {
+          if (messages[i].amount >= result[ind].amount && !flag) {
+            flag = true
+            tmp.push(messages[i])
+            tmp.push(result[ind])
+          } else {
+            tmp.push(result[ind])
+          }
+          ind++;
+        }
       }
-      if (ind == 0)
-        result2 = [messages[i]].concat(result.splice(0, ind + 1))
-      if (ind > 0)
-        result2 = result.concat(result.splice(0, ind + 1)).
-          concat([messages[i]])//.concat(result.splice(ind))
-      result = result2.concat(result)
-      // result2.push(messages[i])
-      // result2 = result.splice(0, ind).concat([messages[i]])
-      // result2.concat([messages[i]])
-      // result2.
-      // result2 = result.splice(0, ind).concat([messages[i]]).concat(result.splice(ind))
-      // result = result2
+      result = tmp
     }
   }
-  return result.splice(0, TOP_DONATE_LIST_LIMIT)
+  return result //.splice(0, TOP_DONATE_LIST_LIMIT)
 }
