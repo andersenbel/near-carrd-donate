@@ -33,7 +33,7 @@ And get it:
 Carrd integration
 ==========
 
-Project can be integrated with https://carrd.co/ CMS.
+Near project can be integrated with [Carrd.co CMS](https://carrd.co/ ).
 You shoud to add three embeded block: 
 1. Near panel and input gorm for authorisied users `card/carrd-donate-panel.html`
 2. Output donates lists area `card/carrd-donate-messages.html`
