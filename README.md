@@ -25,6 +25,7 @@ If you all made right, you can run the command:
     near view your-contract.testnet getTopPhilanthropists
 
 And get it:
+
     View call: your-contract.testnet.getTopPhilanthropists()
     []
 
