@@ -2,7 +2,7 @@ Near Carrd Donate Module
 ==========
 
 Charity fundraising project with a rating of philanthropists.
-How it works see on the video https://www.youtube.com/watch?v=tMpGK9lEoAI
+How it works see on the video `https://www.youtube.com/watch?v=tMpGK9lEoAI` (It is a draft yet)
 
 Prepare Near contract
 ==========
