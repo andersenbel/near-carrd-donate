@@ -8,7 +8,7 @@ How it works see on the video: https://www.youtube.com/watch?v=tMpGK9lEoAI (it i
 Prepare Near contract
 ==========
 
-To prepare Near contract, you shoud clone `https://github.com/andersenbel/near-carrd-donate` repository:
+To prepare Near contract, you shoud clone https://github.com/andersenbel/near-carrd-donate repository:
 
     git clone git@github.com:andersenbel/near-carrd-donate    
 
@@ -16,7 +16,7 @@ And modify settings in  `src/config.js`:
 
     const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-contact-name.testnet';
 
-Next, you should to prepare envoriment accoording `Near Quick Start` part below, and deploy contract:
+Next, you should to prepare envoriment accoording [Near Quick Start](#near-quick-start) part below, and deploy contract:
 
     yarn deploy:contract
     near deploy --accountId carrd-donate.testnet --wasmFile ./out/main.wasm
