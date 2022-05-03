@@ -5,7 +5,7 @@ import { context, u128, PersistentVector } from "near-sdk-as";
  * Exporting a new class PostedMessage so it can be used outside of this file.
  */
 @nearBindgen
-export class Donates {
+export class Donation {
   premium: boolean;
   sender: string;
   datetime: string;
@@ -27,4 +27,4 @@ export class Donates {
  * The parameter to the constructor needs to be unique across a single contract.
  * It will be used as a prefix to all keys required to store data in the storage.
  */
-export const messages = new PersistentVector<Donates>("m");
+export const messages = new PersistentVector<Donation>("m");
