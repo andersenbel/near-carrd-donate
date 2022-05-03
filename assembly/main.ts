@@ -61,37 +61,6 @@ export function getTopPhilanthropists(): Array<Donation> {
   return result.splice(0, TOP_DONATE_LIST_LIMIT)
 }
 
-// export function getTopPhilanthropistsOld(): Array<Donation> {
-//   const numMessages = messages.length
-//   let result: Array<Donation> = [];
-//   let tmp: Array<Donation> = [];
-//   let flag = false
-//   let ind = 0
-//   for (let i = 0; i < numMessages; i++) {
-//     if (messages[i].amount && messages[i].amount > u128.from(0)) {
-//       tmp = []
-//       if (result.length == 0)
-//         tmp.push(messages[i])
-//       else {
-//         flag = false
-//         ind = 0
-//         while (ind < result.length) {
-//           if (messages[i].amount >= result[ind].amount && !flag) {
-//             flag = true
-//             tmp.push(messages[i])
-//             tmp.push(result[ind])
-//           } else {
-//             tmp.push(result[ind])
-//           }
-//           ind++;
-//         }
-//       }
-//       result = tmp
-//     }
-//   }
-//   return result //.splice(0, TOP_DONATE_LIST_LIMIT)
-// }
-
 function insert_and_sort(result: Array<Donation>, donation: Donation): Array<Donation> {
   let to_break = false
   let i = 0
