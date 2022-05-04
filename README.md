@@ -1,9 +1,9 @@
 Near Carrd Donate Module
 ==========
 
-Carrd Donate Module is a charity fundraising project with a rating of philanthropists. It has some features. Login with Near protocol. Opportunity to donate a certain amount Near.  Users can also see the latest donation transactions and the top 5 philanthropists.
+Near Donate Module for Carrd CMS is a charity fundraising project with a rating of philanthropists. It has some features. Login with Near protocol. Opportunity to donate a certain amount Near. Users can also see the latest donation transactions and the top 5 philanthropists.
 
-How it works see on the [video](https://www.youtube.com/watch?v=tMpGK9lEoAI) (it is a draft yet)
+How it works see on the [video](https://www.youtube.com/watch?v=GHJN7xU5reU)
 
 Prepare Near contract
 ==========
