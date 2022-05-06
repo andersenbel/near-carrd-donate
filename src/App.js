@@ -10,11 +10,13 @@ const SUGGESTED_DONATION = '0';
 const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setDonates] = useState([]);
+  const [topdonates, setTopDonates] = useState([]);
 
   useEffect(() => {
     // TODO: don't just fetch once; subscribe!
-    contract.getDonates().then(setMessages);
+    contract.getDonates().then(setDonates);
+    contract.getTopPhilanthropists().then(setTopDonates);
   }, []);
 
   const onSubmit = (e) => {
@@ -33,7 +35,14 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
       contract.getDonates().then(messages => {
-        setMessages(messages);
+        setDonates(messages);
+        message.value = '';
+        donation.value = SUGGESTED_DONATION;
+        fieldset.disabled = false;
+        message.focus();
+      });
+      contract.getTopPhilanthropists().then(topdonates => {
+        setDonates(topdonates);
         message.value = '';
         donation.value = SUGGESTED_DONATION;
         fieldset.disabled = false;
@@ -45,7 +54,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const signIn = () => {
     wallet.requestSignIn(
       { contractId: nearConfig.contractName, methodNames: [contract.addDonate.name] }, //contract requesting access
-      'NEAR Guest Book', //optional name
+      'NEAR Donates', //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
     );
@@ -59,7 +68,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   return (
     <main>
       <header>
-        <h1>NEAR Guest Book</h1>
+        <h1>NEAR Donate</h1>
         {currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
@@ -69,7 +78,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         ? <Form onSubmit={onSubmit} currentUser={currentUser} />
         : <SignIn />
       }
-      {!!currentUser && !!messages.length && <Messages messages={messages} />}
+
+      <h2>Top Philanthropists</h2>
+      <Messages messages={topdonates} />
+
+      <h2>Last donates</h2>
+      <Messages messages={messages} />
     </main>
   );
 };
