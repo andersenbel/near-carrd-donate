@@ -12,6 +12,8 @@ const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setDonates] = useState([]);
   const [topdonates, setTopDonates] = useState([]);
+  const [donateBalance, setdonateBalance] = useState([]);
+  const [numberPhilanthropists, setNumberPhilanthropists] = useState([]);
 
   useEffect(() => {
     // TODO: don't just fetch once; subscribe!
@@ -19,10 +21,19 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     contract.getTopPhilanthropists().then(setTopDonates);
   }, []);
 
+  contract.getDonateBalance().then(d => {
+    setdonateBalance(Math.round(d / 1000000000000000000000000));
+  });
+
+  contract.getNumberPhilanthropists().then(n => {
+    setNumberPhilanthropists(n);
+  });
+
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const { fieldset, message, donation } = e.target.elements;
+    const { fieldset, message, username, donation } = e.target.elements;
 
     fieldset.disabled = true;
 
@@ -30,7 +41,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addDonate(
-      { text: message.value },
+      { text: message.value, name: username.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -74,6 +85,10 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           : <button onClick={signIn}>Log in</button>
         }
       </header>
+      <ul>
+        <li><span>Funds raised:</span><strong>{donateBalance}</strong></li>
+        <li><span>Number of philanthropists:</span><strong>{numberPhilanthropists}</strong> </li>
+      </ul>
       {currentUser
         ? <Form onSubmit={onSubmit} currentUser={currentUser} />
         : <SignIn />
@@ -83,7 +98,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       <Messages messages={topdonates} />
 
       <h2>Last donates</h2>
-      <Messages messages={messages} />
+      <Messages messages={messages.reverse()} />
     </main>
   );
 };

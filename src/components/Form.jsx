@@ -6,12 +6,21 @@ export default function Form({ onSubmit, currentUser }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset id="fieldset">
-        <p>Sign the guest book, { currentUser.accountId }!</p>
+        <p>Sign the guest book, {currentUser.accountId}!</p>
+        <p className="highlight">
+          <label htmlFor="message">Your name:</label>
+          <input
+            autoComplete="off"
+            autoFocus
+            id="username"
+            required
+          />
+        </p>
+
         <p className="highlight">
           <label htmlFor="message">Message:</label>
           <input
             autoComplete="off"
-            autoFocus
             id="message"
             required
           />
@@ -24,13 +33,13 @@ export default function Form({ onSubmit, currentUser }) {
             id="donation"
             max={Big(currentUser.balance).div(10 ** 24)}
             min="0"
-            step="0.01"
+            step="1"
             type="number"
           />
           <span title="NEAR Tokens">Ⓝ</span>
         </p>
         <button type="submit">
-          Sign
+          Donate
         </button>
       </fieldset>
     </form>
