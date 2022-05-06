@@ -14,7 +14,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   useEffect(() => {
     // TODO: don't just fetch once; subscribe!
-    contract.getMessages().then(setMessages);
+    contract.getDonates().then(setMessages);
   }, []);
 
   const onSubmit = (e) => {
@@ -27,12 +27,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // TODO: optimistically update page with new message,
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
-    contract.addMessage(
+    contract.addDonate(
       { text: message.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
-      contract.getMessages().then(messages => {
+      contract.getDonates().then(messages => {
         setMessages(messages);
         message.value = '';
         donation.value = SUGGESTED_DONATION;
@@ -44,7 +44,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   const signIn = () => {
     wallet.requestSignIn(
-      {contractId: nearConfig.contractName, methodNames: [contract.addMessage.name]}, //contract requesting access
+      { contractId: nearConfig.contractName, methodNames: [contract.addDonate.name] }, //contract requesting access
       'NEAR Guest Book', //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
@@ -60,24 +60,24 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     <main>
       <header>
         <h1>NEAR Guest Book</h1>
-        { currentUser
+        {currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
         }
       </header>
-      { currentUser
+      {currentUser
         ? <Form onSubmit={onSubmit} currentUser={currentUser} />
-        : <SignIn/>
+        : <SignIn />
       }
-      { !!currentUser && !!messages.length && <Messages messages={messages}/> }
+      {!!currentUser && !!messages.length && <Messages messages={messages} />}
     </main>
   );
 };
 
 App.propTypes = {
   contract: PropTypes.shape({
-    addMessage: PropTypes.func.isRequired,
-    getMessages: PropTypes.func.isRequired
+    addDonate: PropTypes.func.isRequired,
+    getDonates: PropTypes.func.isRequired
   }).isRequired,
   currentUser: PropTypes.shape({
     accountId: PropTypes.string.isRequired,
