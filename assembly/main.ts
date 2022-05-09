@@ -5,7 +5,7 @@ import { Donation, messages } from './model';
 // --- contract code goes below
 
 // The maximum number of latest messages the contract returns.
-const DONATE_LIST_LIMIT = 10;
+const LAST_DONATE_LIST_LIMIT = 10;
 
 // The maximum number of latest messages the contract returns.
 const TOP_DONATE_LIST_LIMIT = 5;
@@ -32,10 +32,9 @@ export function getDonates(): Donation[] {
   for (let i = 0; i < numMessages; i++) {
     if (messages[i].amount > u128.from(0))
       result.push(messages[i]);
-    if (result.length == DONATE_LIST_LIMIT)
-      break
   }
-  return result
+  // result.splice(0, LAST_DONATE_LIST_LIMIT)
+  return result.reverse().splice(0, LAST_DONATE_LIST_LIMIT).reverse()//result
 }
 
 export function getDonateBalance(): String {
