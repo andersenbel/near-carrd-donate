@@ -33,8 +33,7 @@ export function getDonates(): Donation[] {
     if (messages[i].amount > u128.from(0))
       result.push(messages[i]);
   }
-  // result.splice(0, LAST_DONATE_LIST_LIMIT)
-  return result.reverse().splice(0, LAST_DONATE_LIST_LIMIT).reverse()//result
+  return result.reverse().splice(0, LAST_DONATE_LIST_LIMIT).reverse()
 }
 
 export function getDonateBalance(): String {
