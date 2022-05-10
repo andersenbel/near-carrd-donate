@@ -1,11 +1,11 @@
 Introduction
 ==========
 
-If you have a task to fundraise for your project, the Near Protocol platform can be a very good helper in this matter.
+If you have a project to fundraise, the Near Protocol is a very suitable platform for this task.
 
-Thanks to the ability to embed custom functions in the blockchain, Near Protocol, can not only easy transfer money between wallets but also, for example, make a rating of the best investors or philanthropists to stimulate competition between them, draw prizes, record the amount needed to collect and publish it and much more!
+Near Protocol's ability to embed custom functions in the blockchain, Near Protocol, can not only easy transfer money between wallets but also, for example, make a rating of the best investors or philanthropists to stimulate competition between them,  display the amount needed to fundraise in real-time, and much more!
 
-Now I will show how easy it is to implement these functions thanks to Near. 
+Now I will show how easy it is to implement these functions with Near.
 
 I have created project ["Let's help homeless pets"](https://near-donate.carrd.co/) allows:
 
