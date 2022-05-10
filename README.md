@@ -1,9 +1,35 @@
+Introduction
+==========
+
+If you have a task to fundraise for your project, the Near Protocol platform can be a very good helper in this matter.
+
+Thanks to the ability to embed custom functions in the blockchain, Near Protocol, can not only easy transfer money between wallets but also, for example, make a rating of the best investors or philanthropists to stimulate competition between them, draw prizes, record the amount needed to collect and publish it and much more!
+
+Now I will show how easy it is to implement these functions thanks to Near. 
+
+Project "Let's help homeless pets" allows:
+
+1.) Make charitable contributions, I don't use the base's "send" function of Near Protocol, I created my own functions - "addDonate", that can add to the transaction name of the philanthropist and message with wishes. 
+addDonate --  near change function.
+
+2.) Display the amount of raised funds in real-time.
+getDonateBalance -near view function.
+
+3.) Display the number of philanthropists in real time.
+getNumberPhilanthropists - near view function.
+
+4.) The top list of philanthropists, sorted by amount.
+getTopPhilanthropists - near view function.
+
+How to do this and how its works see on the [video/en](https://www.youtube.com/watch?v=GHJN7xU5reU),  [video/ua](https://www.youtube.com/watch?v=_uypyNrGXrQ)
+
+And read step by step manual below.
+
 Near Carrd Donate Module
 ==========
 
 Near Donate Module for Carrd CMS is a charity fundraising project with a rating of philanthropists. It has some features. Login with Near protocol. Opportunity to donate a certain amount Near. Users can also see the latest donation transactions and the top 5 philanthropists.
 
-How it works see on the [video/en](https://www.youtube.com/watch?v=GHJN7xU5reU),  [video/ua](https://www.youtube.com/watch?v=_uypyNrGXrQ)
 
 Prepare Near contract
 ==========
