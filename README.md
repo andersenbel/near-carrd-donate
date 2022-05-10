@@ -7,7 +7,7 @@ Thanks to the ability to embed custom functions in the blockchain, Near Protocol
 
 Now I will show how easy it is to implement these functions thanks to Near. 
 
-Project "Let's help homeless pets" allows:
+I have created project ["Let's help homeless pets"](https://near-donate.carrd.co/) allows:
 
 1.) Make charitable contributions, I don't use the base's "send" function of Near Protocol, I created my own functions - "addDonate", that can add to the transaction name of the philanthropist and message with wishes. 
 addDonate --  near change function.
