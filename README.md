@@ -21,7 +21,7 @@ Display the number of philanthropists in real time.
 4. `getTopPhilanthropists`
 The top list of philanthropists, sorted by amount.
 
-How to do this and how it works see on the [video/en](https://www.youtube.com/watch?v=GHJN7xU5reU),  [video/ua](https://www.youtube.com/watch?v=_uypyNrGXrQ)
+How to do this and how it works to see on the [video/en](https://www.youtube.com/watch?v=GHJN7xU5reU),  [video/ua](https://www.youtube.com/watch?v=_uypyNrGXrQ)
 
 And read step by step manual below.
 
