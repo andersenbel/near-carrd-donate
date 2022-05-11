@@ -7,19 +7,19 @@ Near Protocol's ability to embed custom functions in the blockchain, Near Protoc
 
 Now I will show how easy it is to implement these functions with Near.
 
-I have created project ["Let's help homeless pets"](https://near-donate.carrd.co/) allows:
+I have created project ["Let's help homeless pets"](https://near-donate.carrd.co/), with the next features:
 
-1.) Make charitable contributions, I don't use the base's "send" function of Near Protocol, I created my own functions - "addDonate", that can add to the transaction name of the philanthropist and message with wishes. 
-addDonate --  near change function.
+1.) Make charitable contributions. But instead the base's "send" function of Near Protocol, I created  function - "addDonate", that can add to the transaction name of the philanthropist, date  and message with wishes. 
+    addDonate --  near change function.
 
 2.) Display the amount of raised funds in real-time.
-getDonateBalance -near view function.
+    getDonateBalance -near view function.
 
 3.) Display the number of philanthropists in real time.
-getNumberPhilanthropists - near view function.
+    getNumberPhilanthropists - near view function.
 
 4.) The top list of philanthropists, sorted by amount.
-getTopPhilanthropists - near view function.
+    getTopPhilanthropists - near view function.
 
 How to do this and how its works see on the [video/en](https://www.youtube.com/watch?v=GHJN7xU5reU),  [video/ua](https://www.youtube.com/watch?v=_uypyNrGXrQ)
 
