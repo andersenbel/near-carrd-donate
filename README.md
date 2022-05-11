@@ -9,9 +9,9 @@ Now I will show how easy it is to implement these functions with Near.
 
 I have created project ["Let's help homeless pets"](https://near-donate.carrd.co/), with the next features:
 
-1.) Make charitable contributions. But instead the base's "send" function of Near Protocol, I created  function - "addDonate", that can add to the transaction name of the philanthropist, date  and message with wishes.
-
-    addDonate --  near change function.
+addDonate
+----------
+Make charitable contributions. But instead the base's "send" function of Near Protocol, I created  function - "addDonate", that can add to the transaction name of the philanthropist, date and message with wishes.
 
 2.) Display the amount of raised funds in real-time.
     getDonateBalance -near view function.
